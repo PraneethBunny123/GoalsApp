@@ -19,6 +19,7 @@ export default function App() {
         <View style={styles.appContainer}>
             <View style={styles.inputContainer} >
                 <TextInput 
+                    value={enteredGoalText}
                     style={styles.textInput} 
                     placeholder='Your goal'
                     onChangeText={handleTextInput}    
@@ -29,7 +30,9 @@ export default function App() {
                 />
             </View>
             <View style={styles.goalsContainer}>
-                <Text>List of goals</Text>
+                {goals.map(goal => (
+                    <Text key={goal}>{goal}</Text>
+                ))}
             </View>
         </View>
     );
