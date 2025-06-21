@@ -11,7 +11,10 @@ export default function App() {
     }
 
     function handleButtonClick() {
-        setGoals(prevState => ([...prevState, enteredGoalText]))
+        setGoals(prevState => ([
+            ...prevState, 
+            {text: enteredGoalText, key: Math.random().toString()}
+        ]))
         setEnteredGoalText('')
     }
 
@@ -35,7 +38,7 @@ export default function App() {
                     renderItem={goalData => {
                         return (
                             <View style={styles.goalItem}>
-                                <Text style={styles.goalText}>{goalData.item}</Text>                    
+                                <Text style={styles.goalText}>{goalData.item.text}</Text>                    
                             </View>
                         )
                     }}    
