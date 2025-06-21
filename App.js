@@ -35,7 +35,7 @@ export default function App() {
                         key={goal}
                         style={styles.goalItem}    
                     >
-                        <Text>{goal}</Text>                    
+                        <Text style={styles.goalText}>{goal}</Text>                    
                     </View>
                 ))}
             </View>
@@ -73,6 +73,8 @@ const styles = StyleSheet.create({
         padding: 8,
         borderRadius: 6,
         backgroundColor: '#5e08cc',
+    },
+    goalText: {
         color: 'white'
     }
 });
