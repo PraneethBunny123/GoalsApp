@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
     const [enteredGoalText, setEnteredGoalText] = useState('')
@@ -30,16 +30,16 @@ export default function App() {
                 />
             </View>
             <View style={styles.goalsContainer}>
-                <ScrollView>
-                    {goals.map(goal => (
-                        <View 
-                            key={goal}
-                            style={styles.goalItem}    
-                        >
-                            <Text style={styles.goalText}>{goal}</Text>                    
-                        </View>
-                    ))}
-                </ScrollView>
+                <FlatList 
+                    data={goals} 
+                    renderItem={goalData => {
+                        return (
+                            <View style={styles.goalItem}>
+                                <Text style={styles.goalText}>{goalData.item}</Text>                    
+                            </View>
+                        )
+                    }}    
+                />
             </View>
         </View>
     );
