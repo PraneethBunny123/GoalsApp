@@ -29,16 +29,18 @@ export default function App() {
                     onPress={handleButtonClick}    
                 />
             </View>
-            <ScrollView style={styles.goalsContainer}>
-                {goals.map(goal => (
-                    <View 
-                        key={goal}
-                        style={styles.goalItem}    
-                    >
-                        <Text style={styles.goalText}>{goal}</Text>                    
-                    </View>
-                ))}
-            </ScrollView>
+            <View style={styles.goalsContainer}>
+                <ScrollView>
+                    {goals.map(goal => (
+                        <View 
+                            key={goal}
+                            style={styles.goalItem}    
+                        >
+                            <Text style={styles.goalText}>{goal}</Text>                    
+                        </View>
+                    ))}
+                </ScrollView>
+            </View>
         </View>
     );
 }
