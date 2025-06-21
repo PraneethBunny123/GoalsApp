@@ -13,7 +13,7 @@ export default function App() {
     function handleButtonClick() {
         setGoals(prevState => ([
             ...prevState, 
-            {text: enteredGoalText, key: Math.random().toString()}
+            {text: enteredGoalText, id: Math.random().toString()}
         ]))
         setEnteredGoalText('')
     }
@@ -41,7 +41,8 @@ export default function App() {
                                 <Text style={styles.goalText}>{goalData.item.text}</Text>                    
                             </View>
                         )
-                    }}    
+                    }}  
+                    keyExtractor={(item, index) => item.id}  
                 />
             </View>
         </View>
