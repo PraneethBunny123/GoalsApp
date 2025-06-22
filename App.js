@@ -37,9 +37,7 @@ export default function App() {
                     data={goals} 
                     renderItem={goalData => {
                         return (
-                            <View style={styles.goalItem}>
-                                <Text style={styles.goalText}>{goalData.item.text}</Text>                    
-                            </View>
+                            <View />
                         )
                     }}  
                     keyExtractor={(item, index) => item.id}  
