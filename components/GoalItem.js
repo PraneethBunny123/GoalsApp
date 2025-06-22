@@ -15,4 +15,7 @@ const styles = StyleSheet.create({
         borderRadius: 6,
         backgroundColor: '#5e08cc',
     },
+    goalText: {
+        color: 'white'
+    }
 })

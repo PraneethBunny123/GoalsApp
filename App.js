@@ -73,7 +73,4 @@ const styles = StyleSheet.create({
     goalsContainer: {
         flex: 4
     },
-    goalText: {
-        color: 'white'
-    }
 });
