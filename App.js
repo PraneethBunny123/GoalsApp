@@ -21,18 +21,7 @@ export default function App() {
 
     return (
         <View style={styles.appContainer}>
-            <View style={styles.inputContainer} >
-                <TextInput 
-                    value={enteredGoalText}
-                    style={styles.textInput} 
-                    placeholder='Your goal'
-                    onChangeText={handleTextInput}    
-                />
-                <Button 
-                    title='Add Goal' 
-                    onPress={handleButtonClick}    
-                />
-            </View>
+            
             <View style={styles.goalsContainer}>
                 <FlatList 
                     data={goals} 
@@ -53,15 +42,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingTop: 50,
         paddingHorizontal: 16
-    },
-    inputContainer: {
-        flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 24,
-        borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
     },
     textInput: {
         borderWidth: 1,
