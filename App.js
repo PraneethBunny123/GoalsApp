@@ -8,7 +8,11 @@ export default function App() {
     const [enteredGoalText, setEnteredGoalText] = useState('')
     const [goals, setGoals] = useState([])
 
-    
+    function handleDeleteGoal() {
+        console.log('delete');
+        
+    }
+
     return (
         <View style={styles.appContainer}>
             <GoalInput 
@@ -21,7 +25,10 @@ export default function App() {
                     data={goals} 
                     renderItem={goalData => {
                         return (
-                            <GoalItem goalData={goalData} />
+                            <GoalItem 
+                                goalData={goalData} 
+                                onDeleteItem={handleDeleteGoal}    
+                            />
                         )
                     }}  
                     keyExtractor={(item, index) => item.id}  

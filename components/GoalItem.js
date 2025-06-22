@@ -1,10 +1,12 @@
-import { StyleSheet, View, Text } from "react-native"
+import { StyleSheet, View, Text, Pressable } from "react-native"
 
 export default function GoalItem({goalData}) {
     return (
-        <View style={styles.goalItem}>
-            <Text style={styles.goalText}>{goalData.item.text}</Text>                    
-        </View>
+        <Pressable>
+            <View style={styles.goalItem}>
+                <Text style={styles.goalText}>{goalData.item.text}</Text>                    
+            </View>
+        </Pressable>
     )
 }
 
