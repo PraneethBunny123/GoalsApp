@@ -1,6 +1,20 @@
 import { View, StyleSheet, TextInput, Button } from "react-native"
 
-export default function GoalInput() {
+export default function GoalInput({enteredGoalText, setEnteredGoalText, setGoals}) {
+
+    function handleTextInput(enteredText) {
+        setEnteredGoalText(enteredText)
+    }
+    
+    function handleButtonClick() {
+        setGoals(prevState => ([
+            ...prevState, 
+            {text: enteredGoalText, id: Math.random().toString()}
+        ]))
+        setEnteredGoalText('')
+    }
+
+
     return (
         <View style={styles.inputContainer} >
             <TextInput 
@@ -26,5 +40,12 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         borderBottomWidth: 1,
         borderBottomColor: '#cccccc'
+    },
+    textInput: {
+        borderWidth: 1,
+        borderColor: '#cccccc',
+        width: '70%',
+        marginRight: 8,
+        padding: 8
     },
 })
