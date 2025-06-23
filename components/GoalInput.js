@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { View, StyleSheet, TextInput, Button, Modal } from "react-native"
 
-export default function GoalInput({setGoals}) {
+export default function GoalInput({setGoals, isModalVisible}) {
 
     const [enteredGoalText, setEnteredGoalText] = useState('')
     
@@ -19,7 +19,7 @@ export default function GoalInput({setGoals}) {
 
 
     return (
-        <Modal>
+        <Modal visible={isModalVisible} animationType="slide">
             <View style={styles.inputContainer} >
                 <TextInput 
                     value={enteredGoalText}
