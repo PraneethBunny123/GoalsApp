@@ -24,7 +24,7 @@ export default function App() {
                 color='#5e08cc'
                 onPress={handleModalButton}
             />
-            <GoalInput setGoals={setGoals} />
+            {isModalVisible && <GoalInput setGoals={setGoals} />}
             <View style={styles.goalsContainer}>
                 <FlatList 
                     data={goals} 
