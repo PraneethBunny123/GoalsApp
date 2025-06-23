@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { FlatList, StyleSheet, View } from 'react-native';
+import { Button, FlatList, StyleSheet, View } from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
 export default function App() {
     const [goals, setGoals] = useState([])
+    
 
     function handleDeleteGoal(id) {
         const filteredGoals = goals.filter(goal => goal.id !== id) 
@@ -14,9 +15,8 @@ export default function App() {
 
     return (
         <View style={styles.appContainer}>
-            <GoalInput 
-                setGoals={setGoals}
-            />
+            <Button title='Add New Goal' color='#5e08cc'/>
+            <GoalInput setGoals={setGoals} />
             <View style={styles.goalsContainer}>
                 <FlatList 
                     data={goals} 
