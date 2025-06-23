@@ -10,7 +10,8 @@ export default function App() {
 
     function handleDeleteGoal(id) {
         const filteredGoals = goals.filter(goal => goal.id !== id) 
-        setGoals(filteredGoals)       
+        setGoals(filteredGoals)   
+        console.log('deleted: '+ id)    
     }
 
     return (
