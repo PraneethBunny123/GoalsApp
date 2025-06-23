@@ -11,10 +11,13 @@ export default function App() {
         setIsModalVisible(true)
     }
 
+    function closeModal() {
+        setIsModalVisible(false)
+    }
+
     function handleDeleteGoal(id) {
         const filteredGoals = goals.filter(goal => goal.id !== id) 
         setGoals(filteredGoals)   
-        console.log('deleted: '+ id)    
     }
 
     return (
@@ -25,7 +28,8 @@ export default function App() {
                 onPress={handleModalButton}
             />
             <GoalInput 
-                isModalVisible={isModalVisible}    
+                isModalVisible={isModalVisible}   
+                closeModal={closeModal} 
                 setGoals={setGoals} 
             />
             <View style={styles.goalsContainer}>

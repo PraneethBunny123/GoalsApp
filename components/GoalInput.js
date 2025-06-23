@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { View, StyleSheet, TextInput, Button, Modal } from "react-native"
 
-export default function GoalInput({setGoals, isModalVisible}) {
+export default function GoalInput({setGoals, isModalVisible, closeModal}) {
 
     const [enteredGoalText, setEnteredGoalText] = useState('')
     
@@ -15,6 +15,7 @@ export default function GoalInput({setGoals, isModalVisible}) {
             {text: enteredGoalText, id: Math.random().toString()}
         ]))
         setEnteredGoalText('')
+        closeModal()
     }
 
 
@@ -32,7 +33,7 @@ export default function GoalInput({setGoals, isModalVisible}) {
                         <Button title='Add Goal' onPress={handleButtonClick} />
                     </View>
                     <View style={styles.button}>
-                        <Button title="Cancel" />
+                        <Button title="Cancel" onPress={closeModal} />
                     </View>    
                 </View>
             </View>
