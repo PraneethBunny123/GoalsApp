@@ -5,7 +5,11 @@ import GoalInput from './components/GoalInput';
 
 export default function App() {
     const [goals, setGoals] = useState([])
-    
+    const [isModalVisible, setIsModalVisible] = useState(false)
+
+    function handleModalButton() {
+        setIsModalVisible(true)
+    }
 
     function handleDeleteGoal(id) {
         const filteredGoals = goals.filter(goal => goal.id !== id) 
@@ -15,7 +19,11 @@ export default function App() {
 
     return (
         <View style={styles.appContainer}>
-            <Button title='Add New Goal' color='#5e08cc'/>
+            <Button 
+                title='Add New Goal' 
+                color='#5e08cc'
+                onPress={handleModalButton}
+            />
             <GoalInput setGoals={setGoals} />
             <View style={styles.goalsContainer}>
                 <FlatList 
