@@ -8,9 +8,9 @@ export default function App() {
     const [enteredGoalText, setEnteredGoalText] = useState('')
     const [goals, setGoals] = useState([])
 
-    function handleDeleteGoal() {
-        console.log('delete');
-        
+    function handleDeleteGoal(id) {
+        const filteredGoals = goals.filter(goal => goal.id !== id) 
+        setGoals(filteredGoals)       
     }
 
     return (
