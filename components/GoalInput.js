@@ -27,9 +27,13 @@ export default function GoalInput({setGoals, isModalVisible}) {
                     placeholder='Your goal'
                     onChangeText={handleTextInput}    
                 />
-                <View>
-                    <Button title='Add Goal' onPress={handleButtonClick} />
-                    <Button title="Cancel" />
+                <View style={styles.buttonContainer}>
+                    <View style={styles.button}>
+                        <Button title='Add Goal' onPress={handleButtonClick} />
+                    </View>
+                    <View style={styles.button}>
+                        <Button title="Cancel" />
+                    </View>    
                 </View>
             </View>
         </Modal>
@@ -52,4 +56,11 @@ const styles = StyleSheet.create({
         marginRight: 8,
         padding: 8
     },
+    buttonContainer: {
+        flexDirection: 'row'
+    },
+    button: {
+        width: '30%',
+        marginHorizontal: 8
+    }
 })
