@@ -1,11 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, FlatList, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { FlatList, StyleSheet, View } from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
 export default function App() {
-    const [enteredGoalText, setEnteredGoalText] = useState('')
     const [goals, setGoals] = useState([])
 
     function handleDeleteGoal(id) {
@@ -17,8 +15,6 @@ export default function App() {
     return (
         <View style={styles.appContainer}>
             <GoalInput 
-                enteredGoalText={enteredGoalText}
-                setEnteredGoalText={setEnteredGoalText}
                 setGoals={setGoals}
             />
             <View style={styles.goalsContainer}>
