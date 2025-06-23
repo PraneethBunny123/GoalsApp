@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Button, FlatList, StyleSheet, View } from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
     const [goals, setGoals] = useState([])
@@ -24,7 +25,7 @@ export default function App() {
         <View style={styles.appContainer}>
             <Button 
                 title='Add New Goal' 
-                color='#5e08cc'
+                color='#a065ec'
                 onPress={handleModalButton}
             />
             <GoalInput 
@@ -54,7 +55,7 @@ const styles = StyleSheet.create({
     appContainer: {
         flex: 1,
         paddingTop: 50,
-        paddingHorizontal: 16
+        paddingHorizontal: 16,
     },
     goalsContainer: {
         flex: 4
