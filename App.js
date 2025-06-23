@@ -22,32 +22,35 @@ export default function App() {
     }
 
     return (
-        <View style={styles.appContainer}>
-            <Button 
-                title='Add New Goal' 
-                color='#a065ec'
-                onPress={handleModalButton}
-            />
-            <GoalInput 
-                isModalVisible={isModalVisible}   
-                closeModal={closeModal} 
-                setGoals={setGoals} 
-            />
-            <View style={styles.goalsContainer}>
-                <FlatList 
-                    data={goals} 
-                    renderItem={goalData => {
-                        return (
-                            <GoalItem 
-                                goalData={goalData} 
-                                onDeleteItem={handleDeleteGoal}    
-                            />
-                        )
-                    }}  
-                    keyExtractor={(item, index) => item.id}  
+        <>
+            <StatusBar style="light" />
+            <View style={styles.appContainer}>
+                <Button 
+                    title='Add New Goal' 
+                    color='#a065ec'
+                    onPress={handleModalButton}
                 />
+                <GoalInput 
+                    isModalVisible={isModalVisible}   
+                    closeModal={closeModal} 
+                    setGoals={setGoals} 
+                />
+                <View style={styles.goalsContainer}>
+                    <FlatList 
+                        data={goals} 
+                        renderItem={goalData => {
+                            return (
+                                <GoalItem 
+                                    goalData={goalData} 
+                                    onDeleteItem={handleDeleteGoal}    
+                                />
+                            )
+                        }}  
+                        keyExtractor={(item, index) => item.id}  
+                    />
+                </View>
             </View>
-        </View>
+        </>
     );
 }
 
