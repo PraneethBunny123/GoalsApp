@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { View, StyleSheet, TextInput, Button, Modal } from "react-native"
+import { View, StyleSheet, TextInput, Button, Modal, Image } from "react-native"
 
 export default function GoalInput({setGoals, isModalVisible, closeModal}) {
 
@@ -47,10 +47,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        marginBottom: 24,
         padding: 16,
-        borderBottomWidth: 1,
-        borderBottomColor: '#cccccc',
         backgroundColor: '#311b6b'
     },
     image: {
