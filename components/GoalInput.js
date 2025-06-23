@@ -31,10 +31,10 @@ export default function GoalInput({setGoals, isModalVisible, closeModal}) {
                 />
                 <View style={styles.buttonContainer}>
                     <View style={styles.button}>
-                        <Button title='Add Goal' onPress={handleButtonClick} />
+                        <Button title='Add Goal' onPress={handleButtonClick} color='#b180f0' />
                     </View>
                     <View style={styles.button}>
-                        <Button title="Cancel" onPress={closeModal} />
+                        <Button title="Cancel" onPress={closeModal} color='#f31282' />
                     </View>    
                 </View>
             </View>
@@ -57,9 +57,12 @@ const styles = StyleSheet.create({
     },
     textInput: {
         borderWidth: 1,
-        borderColor: '#cccccc',
+        borderColor: '#e4d0ff',
+        backgroundColor: '#e4d0ff',
+        borderRadius: 6,
+        color: '#120438',
         width: '100%',
-        padding: 8
+        padding: 16
     },
     buttonContainer: {
         marginTop: 16,
