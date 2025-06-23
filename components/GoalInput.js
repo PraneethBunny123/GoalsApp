@@ -22,6 +22,7 @@ export default function GoalInput({setGoals, isModalVisible, closeModal}) {
     return (
         <Modal visible={isModalVisible} animationType="slide">
             <View style={styles.inputContainer} >
+                <Image style={styles.image} source={require('../assets/images/goal.png')} />
                 <TextInput 
                     value={enteredGoalText}
                     style={styles.textInput} 
@@ -49,7 +50,13 @@ const styles = StyleSheet.create({
         marginBottom: 24,
         padding: 16,
         borderBottomWidth: 1,
-        borderBottomColor: '#cccccc'
+        borderBottomColor: '#cccccc',
+        backgroundColor: '#311b6b'
+    },
+    image: {
+        width: 100,
+        height: 100,
+        margin: 20
     },
     textInput: {
         borderWidth: 1,
